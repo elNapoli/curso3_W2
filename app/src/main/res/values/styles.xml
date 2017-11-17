@@ -9,5 +9,10 @@
         <item name="android:textColorPrimary">@color/colorPrimaryText</item>
         <item name="android:textColorSecondary">@color/colorSecondaryText</item>
     </style>
+    <style name="MyRaiseButton" parent="Theme.AppCompat.Light">
+        <item name="android:colorButtonNormal">@color/colorAccent</item>
+        <item name="android:colorControlHighlight">@color/colorPrimaryLight</item>
+        <item name="android:textColor">@color/colorPrimaryText</item>
+    </style>
 
 </resources>
