@@ -39,27 +39,36 @@ public class MainActivity extends AppCompatActivity {
                 if(name.matches("")){
                     Snackbar snackbar = Snackbar
                             .make(v, getResources().getString(R.string.name_null), Snackbar.LENGTH_LONG);
-
+                    View sbView = snackbar.getView();
+                    TextView textView = (TextView) sbView.findViewById(android.support.design.R.id.snackbar_text);
+                    textView.setTextColor(getResources().getColor(R.color.colorAccent));
+                    snackbar.show();
                     snackbar.show();
                 }
                 else if (phone.matches("")){
                     Snackbar snackbar = Snackbar
                             .make(v, getResources().getString(R.string.phone_null), Snackbar.LENGTH_LONG);
-
+                    View sbView = snackbar.getView();
+                    TextView textView = (TextView) sbView.findViewById(android.support.design.R.id.snackbar_text);
+                    textView.setTextColor(getResources().getColor(R.color.colorAccent));
                     snackbar.show();
 
                 }
                 else if (email.matches("")){
                     Snackbar snackbar = Snackbar
                             .make(v, getResources().getString(R.string.email_null), Snackbar.LENGTH_LONG);
-
+                    View sbView = snackbar.getView();
+                    TextView textView = (TextView) sbView.findViewById(android.support.design.R.id.snackbar_text);
+                    textView.setTextColor(getResources().getColor(R.color.colorAccent));
                     snackbar.show();
                 }
 
                 else if (date.matches("")){
                     Snackbar snackbar = Snackbar
                             .make(v, getResources().getString(R.string.date_null), Snackbar.LENGTH_LONG);
-
+                    View sbView = snackbar.getView();
+                    TextView textView = (TextView) sbView.findViewById(android.support.design.R.id.snackbar_text);
+                    textView.setTextColor(getResources().getColor(R.color.colorAccent));
                     snackbar.show();
                 }
                 else{
