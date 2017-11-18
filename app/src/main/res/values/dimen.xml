@@ -2,4 +2,9 @@
 <resources>
     <dimen name="padding_app">30dp</dimen>
     <dimen name="ancho_detail">150dp</dimen>
+    <dimen name="margin_date">10dp</dimen>
+    <dimen name="title">30dp</dimen>
+    <dimen name="name">20dp</dimen>
+    <dimen name="mb_30">30dp</dimen>
+    <dimen name="mb_10">10dp</dimen>
 </resources>
