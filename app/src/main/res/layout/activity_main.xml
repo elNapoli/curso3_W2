@@ -34,7 +34,7 @@
                 android:onClick="datePicker"
                 android:layout_below="@+id/etName"/>
             <TextView
-                android:id="@+id/etDate"
+                android:id="@+id/tvDate"
                 android:layout_marginLeft="@dimen/margin_date"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
