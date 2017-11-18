@@ -2,4 +2,8 @@
     <string name="app_name">tareaFinal</string>
     <string name="next">Siguiente</string>
     <string name="name">Nombre completo</string>
+    <string name="dateBirthDay">Fecha de cumpleaños</string>
+    <string name="phone">Teléfono</string>
+    <string name="email">Correo Electrónico</string>
+    <string name="description_contact">Descripción contacto </string>
 </resources>
