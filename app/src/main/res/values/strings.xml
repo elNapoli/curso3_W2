@@ -17,4 +17,6 @@
     <string name="email_null">El E-mail no puede estar vacío</string>
     <string name="phone_null">El Teléfono no puede estar vacío</string>
     <string name="date_null">La fecha de nacimiento estar vacío</string>
+    <string name="message_succeess">El contacto fue creado/actualizado exitosamente</string>
+
 </resources>

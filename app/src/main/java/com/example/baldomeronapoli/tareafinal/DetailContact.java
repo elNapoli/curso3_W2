@@ -1,6 +1,7 @@
 package com.example.baldomeronapoli.tareafinal;
 
 import android.content.Intent;
+import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.KeyEvent;
@@ -14,7 +15,13 @@ public class DetailContact extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.detail_contact);
-
+        View parentLayout = findViewById(android.R.id.content);
+        Snackbar snackbar = Snackbar
+                .make(parentLayout, getResources().getString(R.string.message_succeess), Snackbar.LENGTH_LONG);
+        View sbView = snackbar.getView();
+        TextView textView = (TextView) sbView.findViewById(android.support.design.R.id.snackbar_text);
+        textView.setTextColor(getResources().getColor(R.color.colorAccent));
+        snackbar.show();
         Bundle request = getIntent().getExtras();
 
         final TextView tvName = (TextView) findViewById(R.id.tvName);

@@ -43,7 +43,6 @@ public class MainActivity extends AppCompatActivity {
                     TextView textView = (TextView) sbView.findViewById(android.support.design.R.id.snackbar_text);
                     textView.setTextColor(getResources().getColor(R.color.colorAccent));
                     snackbar.show();
-                    snackbar.show();
                 }
                 else if (phone.matches("")){
                     Snackbar snackbar = Snackbar
