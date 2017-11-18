@@ -1,13 +1,13 @@
 package com.example.baldomeronapoli.tareafinal;
 
-import android.app.DialogFragment;
+import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import org.w3c.dom.Text;
@@ -27,18 +27,65 @@ public class MainActivity extends AppCompatActivity {
         final TextView etDetail = (TextView) findViewById(R.id.etDetail);
 
         next.setOnClickListener(new View.OnClickListener() {
+            @SuppressLint("StringFormatInvalid")
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this,DetailContact.class);
-                intent.putExtra("name",etName.getText().toString());
-                intent.putExtra("email",etEmail.getText().toString());
-                intent.putExtra("phone",etTelefono.getText().toString());
-                intent.putExtra("detail",etDetail.getText().toString());
-                intent.putExtra("date",etDate.getText().toString());
-                startActivity(intent);
-                finish();
+                String name = etName.getText().toString();
+                String email = etEmail.getText().toString();
+                String phone = etTelefono.getText().toString();
+                String detail = etDetail.getText().toString();
+                String date = etDate.getText().toString();
+
+                if(name.matches("")){
+                    Snackbar snackbar = Snackbar
+                            .make(v, getResources().getString(R.string.name_null), Snackbar.LENGTH_LONG);
+
+                    snackbar.show();
+                }
+                else if (phone.matches("")){
+                    Snackbar snackbar = Snackbar
+                            .make(v, getResources().getString(R.string.phone_null), Snackbar.LENGTH_LONG);
+
+                    snackbar.show();
+
+                }
+                else if (email.matches("")){
+                    Snackbar snackbar = Snackbar
+                            .make(v, getResources().getString(R.string.email_null), Snackbar.LENGTH_LONG);
+
+                    snackbar.show();
+                }
+
+                else if (date.matches("")){
+                    Snackbar snackbar = Snackbar
+                            .make(v, getResources().getString(R.string.date_null), Snackbar.LENGTH_LONG);
+
+                    snackbar.show();
+                }
+                else{
+                    Intent intent = new Intent(MainActivity.this,DetailContact.class);
+                    intent.putExtra("name",name);
+                    intent.putExtra("email",email);
+                    intent.putExtra("phone",phone);
+                    intent.putExtra("detail",detail);
+                    intent.putExtra("date",date);
+                    startActivity(intent);
+                    finish();
+                }
+
             }
         });
+
+        Bundle request = getIntent().getExtras();
+        if(request != null){
+            etName.setText(request.getString("name"));
+            etEmail.setText(request.getString("email"));
+            etTelefono.setText(request.getString("phone"));
+            etDetail.setText(request.getString("detail"));
+            etDate.setText(request.getString("date"));
+        }
+
+
     }
     public void datePicker(View view){
 

@@ -12,4 +12,9 @@
     <string name="description_contact2">Descripción contacto: </string>
     <string name="confirm_data">Confirmar datos</string>
     <string name="simulate_text">Texto simulado</string>
+    <string name="edit">Editar</string>
+    <string name="name_null">El nombre no puede estar vacío</string>
+    <string name="email_null">El E-mail no puede estar vacío</string>
+    <string name="phone_null">El Teléfono no puede estar vacío</string>
+    <string name="date_null">La fecha de nacimiento estar vacío</string>
 </resources>
