@@ -113,11 +113,31 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void showDatePickerDialog() {
-        DatePickerFragment newFragment = new DatePickerFragment();
+        final TextView tvDate = (TextView) findViewById(R.id.tvDate);
+
+        DatePickerFragment newFragment = DatePickerFragment.newInstance(new DatePickerDialog.OnDateSetListener() {
+            @Override
+            public void onDateSet(DatePicker datePicker, int year, int month, int day) {
+                // +1 because january is zero
+                final String selectedDate = day + " / " + (month+1) + " / " + year;
+                tvDate.setText(selectedDate);
+            }
+        });
         newFragment.show(getSupportFragmentManager(), "datePicker");
     }
-    public static class DatePickerFragment extends DialogFragment
-            implements DatePickerDialog.OnDateSetListener {
+    public static class DatePickerFragment extends DialogFragment {
+
+        private DatePickerDialog.OnDateSetListener listener;
+
+        public static DatePickerFragment newInstance(DatePickerDialog.OnDateSetListener listener) {
+            DatePickerFragment fragment = new DatePickerFragment();
+            fragment.setListener(listener);
+            return fragment;
+        }
+
+        public void setListener(DatePickerDialog.OnDateSetListener listener) {
+            this.listener = listener;
+        }
 
         @Override
         public Dialog onCreateDialog(Bundle savedInstanceState) {
@@ -128,14 +148,8 @@ public class MainActivity extends AppCompatActivity {
             int day = c.get(Calendar.DAY_OF_MONTH);
 
             // Create a new instance of DatePickerDialog and return it
-            return new DatePickerDialog(getActivity(), this, year, month, day);
+            return new DatePickerDialog(getActivity(), listener, year, month, day);
         }
-        @Override
-        public void onDateSet(DatePicker view, int year, int month, int day) {
-            // Do something with the date chosen by the user
 
-
-
-        }
     }
 }
