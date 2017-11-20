@@ -59,7 +59,7 @@ public class MainActivity extends AppCompatActivity {
                     textView.setTextColor(getResources().getColor(R.color.colorAccent));
                     snackbar.show();
                 }
-                else if (date.matches("")){
+                else if (date.matches("") ||  date.matches(getResources().getString(R.string.dateBirthDay))){
                     Snackbar snackbar = Snackbar
                             .make(v, getResources().getString(R.string.date_null), Snackbar.LENGTH_LONG);
                     View sbView = snackbar.getView();
